@@ -1,3 +1,3 @@
 # ccursor.js
 
-[Demo](http://dgomes.pt/projects/ccursorjs/)
+[Demo](https://dgomes.pt/projects/ccursorjs/)
