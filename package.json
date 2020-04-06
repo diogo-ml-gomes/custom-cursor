@@ -1,0 +1,30 @@
+{
+  "name": "custom-cursor",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogo-ml-gomes/custom-cursor.git"
+  },
+  "keywords": [
+    "vanilla",
+    "plugin",
+    "js",
+    "cursor"
+  ],
+  "author": "Diogo Gomes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diogo-ml-gomes/custom-cursor/issues"
+  },
+  "homepage": "https://github.com/diogo-ml-gomes/custom-cursor#readme",
+  "dependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-dependents": "^1.2.3",
+    "gulp-eslint": "^6.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-terser": "^1.2.0"
+  }
+}

@@ -1,0 +1,104 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 18px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+  cursor: none;
+  user-select: none;
+}
+
+:root {
+  --transition-speed: 200ms;
+  --transition-type: ease;
+  --background-color: #f2f2f2;
+  --text-color: #222;
+  --text-color-hover: #444;
+  --underline-color: var(--text-color);
+  --underline-hover-color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #222;
+    --text-color: #f2f2f2;
+    --text-color-hover: #ddd;
+    --underline-color: var(--text-color);
+    --underline-hover-color: var(--text-color-hover);
+  }
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--background-color);
+}
+
+a {
+  color: var(--text-color);
+  position: relative;
+  transition: color var(--transition-speed) var(--transition-type);
+  z-index: 0;
+  text-decoration: none;
+}
+
+a:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: var(--underline-color);
+  bottom: 0;
+  left: 0;
+  transform: scaley(1) translatey(0);
+  transform-origin: center bottom;
+  transition: transform var(--transition-speed) var(--transition-type), color var(--transition-speed) var(--transition-type);
+  z-index: -1;
+}
+
+a:hover {
+  color: var(--text-color-hover);
+}
+
+a:hover:before {
+  transform: scaley(1.5) translatey(-0.26em);
+  background-color: var(--underline-hover-color);
+}
+
+#cursor {
+  --width: 10px;
+  --height: var(--width);
+  --border-radius: var(--width);
+  --positionx: 0;
+  --positiony: 0;
+  --offset: -5px;
+  --scale: 1;
+  height: var(--height);
+  width: var(--width);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--text-color);
+  position: fixed;
+  top: var(--offset);
+  left: var(--offset);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(var(--positionx), var(--positiony)) scale(var(--scale));
+  transition: all 200ms ease-in-out, transform 100ms;
+}
+
+#cursor.active {
+  --width: 60px;
+  --offset: calc(var(--width) / -2);
+}
+
+body:hover #cursor {
+  opacity: 1;
+}
