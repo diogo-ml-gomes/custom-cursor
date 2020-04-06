@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/diogo-ml-gomes/custom-cursor#readme",
   "dependencies": {
+    "lodash.template": ">=4.5.0",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-dependents": "^1.2.3",
